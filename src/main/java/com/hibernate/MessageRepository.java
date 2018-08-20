@@ -17,7 +17,7 @@ public class MessageRepository {
             Message m = new Message();
             m.setText("message");
             Room room = new Room();
-            room.setId(3L);
+            room.setId(2L);
             m.setRoom(room);
             session.save(m);
             tx.commit();

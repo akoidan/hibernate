@@ -32,12 +32,11 @@ public class App {
             UserRepository.saveUser(session);
             RoomRepository.saveRoom(session);
             MessageRepository.saveMessage(session);
+            RoomRepository.addUserToRoom(session);
         } finally {
             session.close();
+            sessionFactory.close();
         }
-
-        UserRepository.getUserById(session);
-        sessionFactory.close();
     }
 
 

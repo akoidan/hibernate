@@ -23,14 +23,16 @@ public class UserRepository {
         }
     }
 
-    public static void getUserById(Session session) {
+    public static User getUserById(Session session) {
         Transaction tx = session.beginTransaction();
         try {
             User user = session.get(User.class, 1L);
             System.out.println(user);
+            return user;
         } catch (Exception e) {
             tx.rollback();
             logger.error("cannot commit transaction", e);
+            return null;
         }
     }
 

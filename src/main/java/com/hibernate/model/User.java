@@ -26,5 +26,5 @@ public class User {
     @JoinTable(name="user_rooms",
             joinColumns={@JoinColumn(name="user_id")},
             inverseJoinColumns={@JoinColumn(name="room_id")})
-    List<Room> rooms = new ArrayList<>();
+    private List<Room> rooms = new ArrayList<>();
 }
